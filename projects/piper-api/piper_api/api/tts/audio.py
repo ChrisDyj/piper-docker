@@ -43,7 +43,7 @@ class TTSResource(Resource):
               in: query
               required: true
               type: string
-              enum: ['pt_BR-faber-medium', 'pt_BR-edresson-low']
+              enum: ['pt_BR-faber-medium', 'pt_BR-edresson-low', 'fr_FR-upmc-medium']
               description: The ID of the voice to generate audio
         responses:
             200:

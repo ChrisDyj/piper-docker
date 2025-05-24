@@ -25,12 +25,18 @@ def find_files_with_extension(directory, extension):
 
 def get_voices_paths():
     """
-    Retrieves a list of paths to voice files in the 'pt' directory under PIPER_VOICES_PATH.
+    Retrieves a list of paths to voice files under ``PIPER_VOICES_PATH``.
+
+    The previous implementation only scanned the ``pt`` directory which meant
+    that voices from other languages were ignored. In order to support voices
+    such as ``fr_FR-upmc-medium`` we now search recursively through the entire
+    ``PIPER_VOICES_PATH`` directory.
 
     Returns:
-        List[str]: A list of file paths to the voice files with the 'onnx' extension.
+        List[str]: A list of file paths to the voice files with the ``onnx``
+        extension.
     """
-    root_voices_path = PIPER_VOICES_PATH + "/pt"
+    root_voices_path = PIPER_VOICES_PATH
     voices_files = find_files_with_extension(root_voices_path, "onnx")
     return voices_files
 
