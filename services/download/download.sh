@@ -10,7 +10,7 @@ echo "copy large files..."
 
 cd /projects/piper-voices
 
-git lfs pull --include "pt/*"
+git lfs pull --include "pt/*" --include "fr/*"
 
 echo "Downloading the project, it may take a while..."
 
